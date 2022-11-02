@@ -62,7 +62,7 @@ namespace CarAppCore.ServiceCore.Cars
             return result;
         }
 
-        public async Task UpdateCarAsync(Car car)// новую модель передать ?
+        public async Task UpdateCarAsync(Car car)
         {
             await _CarsRepository.UpdateCarAsync(car);
         }
