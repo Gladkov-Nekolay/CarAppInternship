@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Announcement]
+(
+	[ID] BIGINT NOT NULL PRIMARY KEY IDENTITY, 
+    [OwnerID] BIGINT NOT NULL, 
+    [IsSold] BIT NOT NULL DEFAULT 0, 
+    [CarID] BIGINT NOT NULL, 
+    [Description] NVARCHAR(MAX) NOT NULL, 
+    [Price] FLOAT NOT NULL
+)
