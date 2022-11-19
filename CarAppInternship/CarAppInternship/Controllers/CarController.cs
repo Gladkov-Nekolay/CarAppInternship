@@ -49,21 +49,27 @@ namespace CarAppWeb.Controllers
         }
         [Route("[action]")]
         [HttpGet]
-        public async Task<ActionResult> GetAsNoTrackingAsync(long id) 
+        public async Task<ActionResult> GetAsNoTrackingAsync(long id)
         {
             return new OkObjectResult(await carService.GetAsNoTrackingAsync(id));
         }
         [Route("[action]")]
         [HttpGet]
-        public async Task<ActionResult> GetAllAsync([FromQuery] PaginationSettingsModel paginationSettings) 
+        public async Task<ActionResult> GetAllAsync([FromQuery] PaginationSettingsModel paginationSettings)
         {
             return new OkObjectResult(await carService.GetAllAsync(paginationSettings));
         }
         [Route("[action]")]
         [HttpGet]
-        public async Task<ActionResult> GetAllAsNotTrackingAsync([FromQuery] PaginationSettingsModel paginationSettings) 
+        public async Task<ActionResult> GetAllAsNotTrackingAsync([FromQuery] PaginationSettingsModel paginationSettings)
         {
             return new OkObjectResult(await carService.GetAllAsNotTrackingAsync(paginationSettings));
+        }
+        [Route("[action]")]
+        [HttpGet]
+        public async Task<ActionResult> IsExistAsync(long ID) 
+        {
+            return new OkObjectResult(await carService.IsExistAsync(ID));
         }
     }
 }

@@ -13,6 +13,7 @@ namespace CarAppCore.ServiceCore.Cars
         public Task AddCarAsync(CarCreationModel model);
         public Task UpdateCarAsync(Car car);
         public Task DeleteCarAsync(long ID);
+        public Task<bool> IsExistAsync(long ID);
         public Task<Car> GetCarAsync(long ID);
         public Task<Car> GetAsNoTrackingAsync(long id);
         public Task<List<Car>> GetAllAsync(PaginationSettingsModel paginationSettings);

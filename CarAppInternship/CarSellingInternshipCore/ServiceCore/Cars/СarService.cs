@@ -62,6 +62,23 @@ namespace CarAppCore.ServiceCore.Cars
             return result;
         }
 
+        public async Task<bool> IsExistAsync(long ID)
+        {
+            try
+            {
+                var result = await GetAsNoTrackingAsync(ID);
+                return true;
+            }
+            catch (Exception E) 
+            {
+                switch (E) 
+                {
+                    case KeyNotFoundException: return false;
+                    default: throw;
+                }
+            }
+        }
+
         public async Task UpdateCarAsync(Car car)
         {
             await _CarsRepository.UpdateCarAsync(car);
