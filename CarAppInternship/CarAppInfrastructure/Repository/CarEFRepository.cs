@@ -52,7 +52,7 @@ namespace CarAppInfrastructure.Repository
 
         public async Task<Car> GetAsNoTrackingAsync(long id)
         {
-            return await _dbContext.Cars.AsNoTracking().FirstAsync(p=>p.ID==id);
+            return await _dbContext.Cars.AsNoTracking().FirstOrDefaultAsync(p=>p.ID==id);
         }
 
         public async Task<Car> GetCarAsync(long ID)
